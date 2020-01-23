@@ -30,8 +30,6 @@ from typing import List
 
 class Solution:
     def relativeSortArray(self, arr1: List[int], arr2: List[int]) -> List[int]:
-        a = collections.Counter(arr1)
-        return a
         unique = []
         for num in arr2:
             arr1.remove(num)
