@@ -38,12 +38,12 @@ class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         min_num = inf
         max_num = 0
-        for i in range(0, len(prices)-1):
-            min_num = min(prices[i], min_num)
-            max_num = max(prices[i+1] - min_num, max_num)
+        for price in prices:
+            min_num = min(price, min_num)
+            max_num = max(price - min_num, max_num)
 
         return max_num
 
 
-# x = Solution()
-# print(x.maxProfit([7, 3, 5, 1, 6, 4]))
+x = Solution()
+print(x.maxProfit([7, 3, 5, 1, 6, 4]))
