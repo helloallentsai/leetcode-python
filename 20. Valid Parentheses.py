@@ -44,13 +44,10 @@ class Solution:
         stack = []
 
         for letter in s:
-            if letter in map.keys():
+            if letter in map:
                 stack.append(letter)
-            else:
-                if len(stack) == 0:
-                    return False
-                if map[stack.pop()] != letter:
-                    return False
+            elif len(stack) == 0 or map[stack.pop()] != letter:
+                return False
         return not len(stack)
 
 
